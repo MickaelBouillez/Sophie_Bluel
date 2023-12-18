@@ -109,7 +109,7 @@ section {
 
 body {
 	line-height: 1;
-	background-color: rgba(246, 246, 235, 0.4);
+	background-color: #FFFEF8;
 }
 
 ol,
@@ -352,9 +352,12 @@ a {
 	margin-bottom: 2rem;
 }
 
+.login form {
+	width: 37%;
+}
+
 .mail {
 	margin: 1rem;
-	width: 32%;
 }
 
 .email {
@@ -367,11 +370,12 @@ a {
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-top: 0.5rem;
+
 }
 
 .mdp {
 	margin: 1rem;
-	width: 32%;
 }
 
 .password {
@@ -384,9 +388,11 @@ a {
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-top: 0.5rem;
 }
 
 .login #submit {
+	display: flex;
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
