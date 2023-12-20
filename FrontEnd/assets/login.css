@@ -1,0 +1,45 @@
+.oubli {
+    color: black;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 250px;
+}
+
+.login h2 {
+    padding-bottom: 30px;
+}
+
+.login_email input,
+.login_password input {
+    width: 379px;
+    height: 51px;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.19);
+}
+
+.login_email p,
+.login_password p {
+    padding-bottom: 10px;
+}
+
+.login_button {
+    width: 179px;
+    height: 36px;
+    border: none;
+}
+
+input .login_button {
+    margin-bottom: 5px;
+}
+
+.bad_login {
+    display: none;
+    color: red;
+}
