@@ -85,23 +85,39 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchWorks();
     fetchCategories();
 
-    //fonctionnement login
+    // Récupère le bouton de connexion
+    const loginButton = document.getElementById('loginButton');
 
-    // Récupere le formaulaire du HTML qqaund il est envoyé
-    const email = document.querySelector("#email");
-    const password = document.querySelector("#password");
-
-    //AddEvenT... quand il est envoyé
-    const connexion = document.querySelector(".login");
-
-    // Récupère les infos mail et password
-    let badLogin = document.querySelector(".bad_login");
+    // Vérifier l'état de connexion au chargement de la page
+    const isLoggedIn = localStorage.getItem('LogOk');
+    if (isLoggedIn === 'true') {
+        // Si l'utilisateur est connecté, masquer le formulaire de connexion
+        document.querySelector('.login').style.display = 'none';
+        // Mettre à jour le texte du bouton
+        loginButton.textContent = 'Logout';
+    }
 
     // Fetch avec la methode post ( JSON.stringify())
-    connexion.addEventListener("submit", function (e) {
-        e.preventDefault();
+    document.querySelector('.login form').addEventListener("submit", async function (event) {
+        event.preventDefault(); // Empêcher le rechargement de la page
 
-        fetch("http://localhost:5678/api/users/login", {
+        const isLoggedIn = localStorage.getItem('LogOk');
+
+        if (isLoggedIn === 'true') {
+            // Si l'utilisateur est connecté, effectuer la déconnexion
+            logout();
+        } else {
+            // Si l'utilisateur n'est pas connecté, exécuter le processus de connexion existant
+            await login();
+        }
+    });
+
+    // Fonction pour gérer la connexion
+    async function login() {
+        const email = document.querySelector("#email");
+        const password = document.querySelector("#password");
+
+        await fetch("http://localhost:5678/api/users/login", {
             method: "POST",
             headers: {
                 accept: "application/JSON",
@@ -119,6 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (token) {
                     console.log("Connexion ok");
                     window.location.href = "index.html";
+                    localStorage.setItem('LogOk', 'true');
+                    localStorage.setItem('token', token); // Stocker le token
+                    // Mettre à jour le texte du bouton
+                    loginButton.textContent = 'Logout';
                 } else {
                     console.log("Non connecté");
                     afficherMessageErreur("Erreur de connexion. Veuillez vérifier vos identifiants.");
@@ -128,13 +148,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Erreur", error);
                 afficherMessageErreur("Une erreur inattendue s'est produite. Veuillez réessayer.");
             });
-    });
+    }
+
+    // Fonction pour gérer la déconnexion
+    function logout() {
+        // Supprimer l'état de connexion et le token du localStorage
+        localStorage.removeItem('LogOk');
+        localStorage.removeItem('token');
+
+        // Rafraîchir la page après la déconnexion (vous pouvez rediriger ailleurs si nécessaire)
+        window.location.reload();
+    }
 
     function afficherMessageErreur(message) {
+        const badLogin = document.querySelector(".bad_login");
         badLogin.style.display = "flex";
         badLogin.textContent = message;
     }
-})
+});
+
 //////////////////////////////////////////////mode édition
 
 /* Fonction pour générer le mode édition
