@@ -221,7 +221,7 @@ li:hover {
 
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	margin-bottom: 0em;
 }
 
 .gallery {
@@ -297,6 +297,7 @@ footer nav ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	margin-bottom: 4rem;
 }
 
 .filter-item {
@@ -429,162 +430,101 @@ a {
 	cursor: pointer;
 }
 
-.edit_mode {
+.edition {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 59px;
+	height: 40px;
 	background-color: black;
-	position: relative;
-	z-index: 100;
+	margin: 0px;
 }
 
-.edit_button {
+.edition span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-left: 25px;
-	padding-right: 25px;
-	gap: 5px;
 	background-color: black;
 	color: white;
 	border: none;
 	cursor: pointer;
 }
 
-.change_button {
+.edition p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-left: 25px;
-	padding-right: 25px;
-	background-color: white;
-	color: black;
+	padding-left: 5px;
+	background-color: black;
+	color: white;
 	border: none;
-	border-radius: 20px;
-	height: 38px;
 	cursor: pointer;
 }
+
+.editproject {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	cursor: pointer;
+	margin-bottom: 4rem;
+	margin-top: 7rem;
+}
+
+.editproject h2 {
+	margin-right: 15px;
+}
+
+.editproject p {
+	margin-left: 5px;
+}
+
 
 /**MODALE**/
 
+.containerModals {
+	margin: 0;
+	max-width: 1140px;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(128, 128, 128, 0.508);
+}
+
 .modal {
 	display: flex;
-	overflow: auto;
-	align-items: center;
-	justify-content: center;
-	background-color: rgba(0, 0, 0, 0.5);
-	flex-direction: column;
-	width: 100%;
-	max-width: 1140px;
-	height: 100%;
-	position: fixed;
-	overflow-y: auto;
-
-	z-index: 10;
-}
-
-.modal_card,
-.modal_add {
-	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-around;
 	background-color: white;
-	padding: 0;
-	width: 630px;
-	position: relative;
-	top: 70px;
-
-	border-radius: 5px;
-}
-
-.close_Modal {
-	display: flex;
-	width: 100%;
-	justify-content: flex-end;
-}
-
-.close_Modal button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: white;
-	border: none;
-	width: 15px;
-	height: 15px;
-	cursor: pointer;
-	background-color: transparent;
-}
-
-.galleryModal {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	width: 75%;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
-	padding: 20px 20px 15px 20px;
-}
-
-.galleryModal img {
-	width: 100%;
-	max-height: 139px;
-}
-
-.editText {
-	background-color: white;
+	width: 50%;
+	height: 50%;
 	position: relative;
 }
 
-.modal h3 {
-	font-family: "Work Sans";
-	font-size: 26px;
-	padding-top: 50px;
-	padding-bottom: 30px;
-}
-
-.modifier {
-	display: flex;
-	padding-top: 10px;
-	margin-left: 57px;
-	gap: 5px;
-}
-
-.modal .add_button {
-	display: flex;
-	justify-content: center;
-	width: 237px;
-	height: 36px;
-	border: none;
-}
-
-.modal .valid_button {
-	display: flex;
-	justify-content: center;
-	width: 237px;
-	height: 36px;
-	border: none;
-	background-color: grey;
+.fa-xmark {
+	position: absolute;
+	top: 20px;
+	right: 20px;
 	cursor: pointer;
 }
 
-.delete_all {
-	font-family: "Syne";
-	color: red;
-	padding-bottom: 25px;
-}
-
-.modal_line {
-	width: 420px;
-	height: 1px;
-	background-color: #b3b3b3;
-	margin-bottom: 15px;
-	margin-top: 5px;
-}
-
-.modal_contents {
+.modal button {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin: 2em auto;
+	line-height: 20px;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px;
+	border-style: none;
+	height: 40px;
 }
