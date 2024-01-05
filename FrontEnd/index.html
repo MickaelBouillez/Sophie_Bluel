@@ -11,6 +11,7 @@
         rel="stylesheet">
     <meta name="description" content="">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/modale.css">
     <script src="https://kit.fontawesome.com/bea61e4e74.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,9 +19,39 @@
     <section class="containerModals">
         <div class="modal">
             <span><i class="fa-solid fa-xmark"></i></span>
-            <h2>Galerie Photo</h2>
+            <h3>Galerie Photo</h3>
             <div class="modalphoto"></div>
-            <button>Ajouter une photo</button>
+            <button class="addPhotoBtn">Ajouter une photo</button>
+        </div>
+    </section>
+    <section class="containerModalsAdd">
+        <div class="modalAddBlock">
+            <div class="modalAdd">
+                <i class="fa-solid fa-arrow-left"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h3>Ajout Photo</h3>
+            <form class="modalAddForm" action="" enctype="multipart/form-data">
+                <div class="AddFormPhotoblock">
+                    <i class="fa-regular fa-image"></i>
+                    <button class="AddFormPhotoButton">+ Ajouter Photo</button>
+                    <p>jpg, png : 4mo max</p>
+                </div>
+                <div class="AddFormPhototitle">
+                    <label for="titre">Titre</label>
+                    <input type="text" name="titre" id="titre">
+                </div>
+                <div class="AddFormPhotocategorie">
+                    <label for="categorie">Catégorie</label>
+                    <select name="categorie" id="categorie">
+                        <option value="1">Objets</option>
+                        <option value="2">Appartements</option>
+                        <option value="3">Hôtels & restaurants</option>
+                    </select>
+                </div>
+                <input type="submit" value="Valider" class="modalAddBtn">
+        </div>
+        </form>
         </div>
     </section>
     <section class="edition">
@@ -34,7 +65,7 @@
                 <li>projets</li>
                 <li>contact</li>
                 <li><a href="login.html" id="loginButton">Login</a></li>
-                <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
             </ul>
         </nav>
     </header>
@@ -57,8 +88,10 @@
         <section id="portfolio">
             <div class="editproject">
                 <h2>Mes Projets</h2>
-                <span><i class="fa-regular fa-pen-to-square"></i></span>
-                <p>modifier</p>
+                <div class="editbutton">
+                    <span><i class="fa-regular fa-pen-to-square"></i></span>
+                    <p>modifier</p>
+                </div>
             </div>
             <div class="filters">
             </div>
@@ -75,7 +108,7 @@
                 <input type="email" name="email" id="email">
                 <label for="message">Message</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                <input type="submit" value="Envoyer">
+                <input type="submit" value="Envoyer" class="contact-submit">
             </form>
         </section>
     </main>
@@ -88,6 +121,7 @@
     </footer>
 
     <script type="text/javascript" src="./assets/script.js"></script>
+    <script type="text/javascript" src="./assets/modale.js"></script>
 </body>
 
 </html>
