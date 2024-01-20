@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const addPhotoBtn = document.querySelector(".addPhotoBtn")
     const containerModalsAdd = document.querySelector(".containerModalsAdd")
     const backArrow = document.querySelector(".modalAdd .fa-arrow-left")
+    const xmark2 = document.querySelector(".modalAdd .fa-xmark")
 
     ///////
 
@@ -146,6 +147,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     backArrow.addEventListener("click", () => {
         containerModalsAdd.style.display = "none";
+    });
+
+    xmark2.addEventListener("click", () => {
+        containerModalsAdd.style.display = "none";
+        containerModals.style.display = "none";
     });
 
 

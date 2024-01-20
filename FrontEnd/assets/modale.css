@@ -70,7 +70,7 @@
     width: 75px;
     height: 100px;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     z-index: 1;
     position: relative;
 }
@@ -121,6 +121,11 @@
 
 .modalAdd .fa-arrow-left {
     font-size: 20px;
+    cursor: pointer;
+}
+
+.modalAdd .fa-xmark {
+    cursor: pointer;
 }
 
 .containerModalsAdd h3 {
@@ -164,6 +169,9 @@
     font-size: 14px;
     margin-top: 11px;
     font-weight: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .AddFormPhotoblock p {
@@ -178,7 +186,7 @@
     margin-top: 30px;
 }
 
-.AddFormPhototitle #titre {
+.AddFormPhototitle #titreAjout {
     box-shadow: 0px 4px 14px 0px #00000017;
     border: none;
     height: 50px;
@@ -195,7 +203,7 @@
     border-bottom: 2px solid rgba(128, 128, 128, 0.143);
 }
 
-.AddFormPhotocategorie #categorie {
+.AddFormPhotocategorie #selectCategorie {
     background-color: white;
     box-shadow: 0px 4px 14px 0px #00000017;
     border: none;
@@ -217,4 +225,50 @@
     cursor: pointer;
     margin-top: 20px;
     font-weight: 550;
+}
+
+#imageUpload {
+    display: none;
+}
+
+#previewImage {
+    display: none;
+    width: 30%;
+}
+
+#previewImage img {
+    max-width: 420px;
+    max-height: 170px;
+    padding-top: 2px;
+}
+
+#previewdetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#previewdetails img {
+    object-fit: scale-down;
+    width: 50%;
+    display: flex;
+    justify-self: center;
+}
+
+#imageUpload {
+    display: none;
+}
+
+#textFieldsError {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.green-btn {
+    cursor: pointer;
+    background-color: #1D6154;
+    color: white;
+    border-style: solid;
+    border-color: #1D6154;
 }

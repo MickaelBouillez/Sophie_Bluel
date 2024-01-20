@@ -150,7 +150,8 @@ header {
 }
 
 section {
-	margin: 50px 0
+	margin: 50px 0;
+	color: #3D3D3D;
 }
 
 h1 {
@@ -186,6 +187,8 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	margin-right: 20px;
+	color: #3D3D3D;
 }
 
 li:hover {
@@ -205,10 +208,16 @@ li:hover {
 	display: block;
 	margin: auto;
 	width: 80%;
+	margin-top: 15%;
 }
 
 #introduction article {
-	flex: 1
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding-top: 100px;
+	padding-left: 25px;
 }
 
 #introduction h2 {
@@ -216,7 +225,8 @@ li:hover {
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+	margin-bottom: 1.5em;
+	width: 70%;
 }
 
 #portfolio h2 {
@@ -235,6 +245,11 @@ li:hover {
 .gallery img {
 	width: 100%;
 
+}
+
+.work-title {
+	PAdding-top: 5px;
+	font: inherit;
 }
 
 #contact {
@@ -256,6 +271,8 @@ li:hover {
 	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
+	padding-left: 85px;
+	padding-right: 85px;
 }
 
 #contact input {

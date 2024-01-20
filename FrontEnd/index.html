@@ -31,27 +31,40 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <h3>Ajout Photo</h3>
-            <form class="modalAddForm" action="" enctype="multipart/form-data">
+            <form class="modalAddForm" action="" enctype="multipart/form-data" id="ajout-form" method="post">
                 <div class="AddFormPhotoblock">
-                    <i class="fa-regular fa-image"></i>
-                    <button class="AddFormPhotoButton">+ Ajouter Photo</button>
-                    <p>jpg, png : 4mo max</p>
+                    <div id="previewImage">
+                    </div>
+                    <div id="previewdetails">
+                        <i class="fa-regular fa-image"></i>
+                        <label class="AddFormPhotoButton" for="imageUpload" id="btnImage">
+                            + Ajouter photo
+                            <input type="file" accept=".png, .jpg, .jpeg" id="imageUpload">
+                        </label>
+                        <p>jpg, png : 4mo max</p>
+                        <span id="photoError" class="error-message"></span>
+                    </div>
                 </div>
-                <div class="AddFormPhototitle">
-                    <label for="titre">Titre</label>
-                    <input type="text" name="titre" id="titre">
-                </div>
-                <div class="AddFormPhotocategorie">
-                    <label for="categorie">Catégorie</label>
-                    <select name="categorie" id="categorie">
-                        <option value="1">Objets</option>
-                        <option value="2">Appartements</option>
-                        <option value="3">Hôtels & restaurants</option>
-                    </select>
+                <div class="AjoutDetail">
+                    <div class="AddFormPhototitle">
+                        <label for="titre">Titre</label>
+                        <input type="text" name="titre" id="titreAjout" required>
+
+                    </div>
+                    <div class="AddFormPhotocategorie">
+                        <label for="categorie">Catégorie</label>
+                        <select name="categorie" id="selectCategorie" required>
+                            <option value="1"></option>
+                            <option value="2">Objets</option>
+                            <option value="3">Appartements</option>
+                            <option value="4">Hôtels & restaurants</option>
+                        </select>
+                        <span id="textFieldsError" class="error-message"></span>
+                    </div>
                 </div>
                 <input type="submit" value="Valider" class="modalAddBtn">
+            </form>
         </div>
-        </form>
         </div>
     </section>
     <section class="edition">
